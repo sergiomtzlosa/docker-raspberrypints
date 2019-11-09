@@ -1,6 +1,6 @@
 ## Docker for your pints
 
-This is a DOcker image for the Raspberry Pints software: [http://raspberrypints.com/](http://raspberrypints.com/)
+This is a Docker image for the Raspberry Pints software: [http://raspberrypints.com/](http://raspberrypints.com/)
 
 Run the docker
 -------------
