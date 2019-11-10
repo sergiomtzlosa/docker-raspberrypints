@@ -27,13 +27,11 @@
 	
 	//Admin config file - /admin/configp.php
 	$adminconfig2 = "<?php\n";
-	$adminconfig2 .= '  $dbhost="' . "{$servername}" . '";' . "\n";
+	$adminconfig2 .= '      $dbhost="' . "{$servername}" . '";' . "\n";
 	$adminconfig2 .= '	$dbname ="raspberrypints";' . "\n";
-	$adminconfig2 .= '  $dbuser="' . "{$dbuser}" . '";' . "\n";
-	$adminconfig2 .= '  $dbpass="' . "${dbpass1}" . '";' . "\n";
-	$adminconfig2 .= '	$conn = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser,$dbpass);' . "\n";
-	$adminconfig2 .= '	$stmt = $conn->prepare(' . "'SELECT * FROM config WHERE showOnPanel = 1')" . ";\n";
-	$adminconfig2 .= '	$stmt->execute();' . "\n";
-	$adminconfig2 .= '	$result = $stmt->fetchAll();' . "\n";
+	$adminconfig2 .= '      $dbuser="' . "{$dbuser}" . '";' . "\n";
+	$adminconfig2 .= '      $dbpass="' . "${dbpass1}" . '";' . "\n";
+	$adminconfig2 .= '	$conn = new mysqli($dbhost,$dbuser,$dbpass,$dbname) or die("error connection");' . "\n";
+	$adminconfig2 .= '	$result = $conn->query("SELECT * FROM config WHERE showOnPanel = 1") or die("error in query");' . ";\n";
 	$adminconfig2 .= '?>';
 ?>
