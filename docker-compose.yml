@@ -15,9 +15,7 @@ services:
   database:
     container_name: pints-database
     restart: unless-stopped
-    build:
-      context: ./
-      dockerfile: ./docker/Dockerfile_mysql
+    image: mysql:5.6
     ports:
       - "3408:3306"
     environment:
